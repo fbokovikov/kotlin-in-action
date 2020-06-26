@@ -1,5 +1,6 @@
 package kotlin_in_action.interview.tiny.url
 
+import java.util.HashMap
 import java.util.concurrent.atomic.AtomicLong
 import kotlin.math.pow
 
@@ -21,7 +22,7 @@ class TinyUrlSupplier {
     }
 
     fun fromTinyUrl(tinyUrl: String): String {
-        var id = 0
+        var id = 0L
         for ((index, curChar) in tinyUrl.withIndex()) {
             val curPow = URL_CHARS.size.pow(index)
             id += when (curChar) {

@@ -53,16 +53,31 @@ public class TreeUtils {
 
     //(Root-Left-Right) 1 2 4 5 3
     public static void preOrder(TreeNode root) {
-
+        if (root == null) {
+            return;
+        }
+        System.out.println(root.val);
+        preOrder(root.left);
+        preOrder(root.right);
     }
 
     //(Left-Right-Root) 4 5 2 3 1
     public static void postOrder(TreeNode root) {
-
+        if (root == null) {
+            return;
+        }
+        postOrder(root.left);
+        postOrder(root.right);
+        System.out.println(root.val);
     }
 
     //(Left-Root-Right) 4 2 5 1 3
     public static void inOrder(TreeNode root) {
-
+        if (root == null) {
+            return;
+        }
+        inOrder(root.left);
+        System.out.println(root.val);
+        inOrder(root.right);
     }
 }
